@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocSearch</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>DocSearch</h1>
+    </header>
+
+    <div class="header">
+        <input type="text" id="autocomplete-input" placeholder="Search for doctors..." data-testid="autocomplete-input" />
+        <ul id="suggestions"></ul>
+    </div>
+
+    <div class="container">
+        <div class="filter-panel">
+            <div class="filter-group">
+                <h3 data-testid="filter-header-moc">Mode of Consultation</h3>
+                <label>
+                    <input type="radio" name="consultation-type" value="Video Consult" data-testid="filter-video-consult" />
+                    Virtual Consultation
+                </label><br />
+                <label>
+                    <input type="radio" name="consultation-type" value="In Clinic" data-testid="filter-in-clinic" />
+                    On-Site Consultation
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h3 data-testid="filter-header-speciality">Field of Expertise</h3>
+                <label>
+                    <input type="checkbox" value="Cardiologist" data-testid="filter-cardiologist" />
+                    Cardiologist
+                </label><br />
+                <label>
+                    <input type="checkbox" value="Dermatologist" data-testid="filter-dermatologist" />
+                    Dermatologist
+                </label><br />
+                <label>
+                    <input type="checkbox" value="Pediatrician" data-testid="filter-pediatrician" />
+                    Pediatrician
+                </label><br />
+                <label>
+                    <input type="checkbox" value="Orthopedic" data-testid="filter-orthopedic" />
+                    Orthopedic
+                </label><br />
+            </div>
+
+            <div class="filter-group">
+                <h3 data-testid="filter-header-sort">Sort</h3>
+                <label>
+                    <input type="radio" name="sort-by" value="fees" data-testid="sort-fees" />
+                    Cost (Low to High)
+                </label><br />
+                <label>
+                    <input type="radio" name="sort-by" value="experience" data-testid="sort-experience" />
+                    Experience (High to Low)
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <button id="search-button" data-testid="search-button">Search</button>
+            </div>
+        </div>
+
+        <div class="doctor-list" id="doctor-list">
+        </div>
+    </div>
+
+    <div id="doctor-modal" class="doctor-modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <img id="modal-doctor-image" class="doctor-image" alt="Doctor Image" />
+            <div id="modal-doctor-name" class="doctor-name"></div>
+            <div id="modal-doctor-specialty" class="doctor-specialty"></div>
+            <div id="modal-doctor-experience" class="doctor-experience"></div>
+            <div id="modal-doctor-fee" class="doctor-fee"></div>
+            <div id="modal-doctor-contact" class="doctor-contact">
+                <button id="contact-button" data-testid="contact-button">Contact Doctor</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 DocSearch. All rights reserved.</p>
+            <p>Powered by DocSearch</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
